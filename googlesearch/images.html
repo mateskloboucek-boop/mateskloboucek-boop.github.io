@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Images</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+  <header class="topbar">
+    <nav class="top-links" aria-label="Google search options">
+      <a href="index.html">Google Search</a>
+      <a href="advanced.html">Advanced Search</a>
+    </nav>
+  </header>
+
+  <main class="home-content">
+    <a class="wordmark" href="index.html" aria-label="Google Search home">
+      <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+      <span class="images-label">Images</span>
+    </a>
+    <form class="search-form" action="https://www.google.com/search" method="get">
+      <input type="hidden" name="tbm" value="isch">
+      <label class="visually-hidden" for="image-query">Search images</label>
+      <div class="search-field">
+        <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.71.71l.27.28v.78l5 4.99L20.49 19l-4.99-5zm-5 0A4.5 4.5 0 1 1 10.5 5a4.5 4.5 0 0 1 0 9z"/>
+        </svg>
+        <input id="image-query" type="search" name="q" autocomplete="off" autofocus>
+      </div>
+      <div class="search-buttons">
+        <button type="submit">Google Search</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

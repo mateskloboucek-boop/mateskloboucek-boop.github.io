@@ -447,161 +447,35 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
           <h2 class="text-xs uppercase tracking-widest text-brand-neonBlue font-semibold mb-2">Moje práce</h2>
-          <p class="text-3xl sm:text-4xl font-display font-bold text-white">Projekty & Zájmy</p>
+          <p class="text-3xl sm:text-4xl font-display font-bold text-white">Můj projekt</p>
         </div>
 
-        <!-- Filter buttons -->
-        <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-buttons">
-          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-lg text-xs font-semibold bg-brand-neonBlue text-slate-950 transition">Vše</button>
-          <button data-filter="it" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">IT & Kód</button>
-          <button data-filter="gaming" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">Gaming & Komunita</button>
-          <button data-filter="football" class="filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition">Fotbal</button>
-        </div>
       </div>
 
       <!-- Projects Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
-        
-        <!-- Project 1: IT -->
-        <div class="project-item it glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
+      <div class="grid gap-6 max-w-2xl mx-auto w-full" id="projects-grid">
+        <a href="googlesearch/index.html" class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group transition duration-300 hover:-translate-y-1 hover:shadow-glow-cyan" aria-label="Otevřít projekt Google Search">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">IT & Web</span>
-              <span class="text-xs text-slate-500">2024</span>
+              <i data-lucide="search" class="w-5 h-5 text-brand-neonBlue"></i>
             </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonBlue transition mb-2">Webové portfolio & Blog</h3>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonBlue transition mb-2">Google Search</h3>
             <p class="text-slate-400 text-sm mb-6">
-              Plně responzivní statický web postavený na Tailwind CSS s podporou dark mode a interaktivních mini-widgetů pro prezentaci studentských prací.
+              Vlastní webová ukázka vyhledávače Google s běžným vyhledáváním, hledáním obrázků a pokročilým vyhledáváním.
             </p>
           </div>
           <div>
             <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">HTML5</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Tailwind</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">JavaScript</span>
+              <span class="bg-slate-800/80 px-2 py-0.5 rounded">HTML</span>
+              <span class="bg-slate-800/80 px-2 py-0.5 rounded">CSS</span>
+              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Forms</span>
             </div>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300">
-              Prozkoumat projekt <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 group-hover:text-cyan-300">
+              Otevřít projekt <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
           </div>
-        </div>
-
-        <!-- Project 2: Gaming -->
-        <div class="project-item gaming glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-purple-500/10 text-purple-400 border border-purple-500/20">Gaming</span>
-              <span class="text-xs text-slate-500">Komunita</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonPurple transition mb-2">Dedikovaný Herní Server & Bot</h3>
-            <p class="text-slate-400 text-sm mb-6">
-              Správa Linux VPS, instalace a ladění Minecraft / FiveM serveru včetně napojení na automatického Discord bota pro statistiky hráčů a notifikace.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Ubuntu VPS</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Discord.js</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Bash Scripting</span>
-            </div>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300">
-              Více o setupu <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3: Football & IT hybrid -->
-        <div class="project-item football it glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Fotbal & IT</span>
-              <span class="text-xs text-slate-500">Aplikace</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonGreen transition mb-2">Týmový Tracker Statistik</h3>
-            <p class="text-slate-400 text-sm mb-6">
-              Webový prototyp pro evidenci docházky, gólů, asistencí a herního času pro náš fotbalový klub. Jednoduché rozhraní pro trenéra i spoluhráče.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">JS ES6</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Local Storage</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Charts</span>
-            </div>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300">
-              Zobrazit náhled <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4: Football -->
-        <div class="project-item football glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Fotbal</span>
-              <span class="text-xs text-slate-500">Klub</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonGreen transition mb-2">Krajská Soutěž & Turnaje</h3>
-            <p class="text-slate-400 text-sm mb-6">
-              Aktivní působení na postu středního záložníka. Řízení tempa zápasu, taktické rozbory soupeřů a příprava mladších žáků na letním fotbalovém kempu.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Taktika</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Záloha</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Kondice</span>
-            </div>
-            <span class="text-xs text-slate-500 italic">Osobní milník</span>
-          </div>
-        </div>
-
-        <!-- Project 5: Gaming -->
-        <div class="project-item gaming glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-purple-500/10 text-purple-400 border border-purple-500/20">Gaming</span>
-              <span class="text-xs text-slate-500">Esports</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonPurple transition mb-2">Soutěžní Klany & Turnaje</h3>
-            <p class="text-slate-400 text-sm mb-6">
-              Pravidelná účast v amatérských ligách (CS2 / Valorant / Rocket League). Zkušenosti s koordinací pětičlenného týmu, analýzou záznamů (demos) a komunikací.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Teamplay</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Reflexy</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Straty</span>
-            </div>
-            <span class="text-xs text-purple-400 font-bold">Top rank divize</span>
-          </div>
-        </div>
-
-        <!-- Project 6: IT -->
-        <div class="project-item it glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">IT & Hardware</span>
-              <span class="text-xs text-slate-500">Hardware</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonBlue transition mb-2">Custom PC Stavby & Diagnostika</h3>
-            <p class="text-slate-400 text-sm mb-6">
-              Sestavování počítačů na míru, optimalizace airflow, přetaktování a undervolting komponent pro maximální FPS a stabilitu systému.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Hardware</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">BIOS setup</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Cable Mgmt</span>
-            </div>
-            <a href="#contact" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300">
-              Chceš poradit? Napiš <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
+        </a>
       </div>
     </section>
 
@@ -880,33 +754,7 @@
   }
   typeEffect();
 
-  // 3. Project Filter Logic
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Toggle active button style
-        filterButtons.forEach(b => {
-          b.classList.remove('bg-brand-neonBlue', 'text-slate-950');
-          b.classList.add('bg-slate-800', 'text-slate-300');
-        });
-        btn.classList.add('bg-brand-neonBlue', 'text-slate-950');
-        btn.classList.remove('bg-slate-800', 'text-slate-300');
-
-        const filter = btn.getAttribute('data-filter');
-
-        projectItems.forEach(item => {
-          if (filter === 'all' || item.classList.contains(filter)) {
-            item.style.display = 'flex';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // 4. Interactive Reflex Mini-Game
+  // 3. Interactive Reflex Mini-Game
     const arena = document.getElementById('game-arena');
     const startScreen = document.getElementById('game-start-screen');
     const btnStart = document.getElementById('btn-start-game');
