@@ -1,862 +1,163 @@
 <!DOCTYPE html>
-<html lang="cs" class="scroll-smooth">
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | IT Student • Fotbalista • Gamer</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter & Rajdhani for gaming/tech look -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Rajdhani', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              neonGreen: '#10b981', // fotbalový trávník / energičnost
-              neonBlue: '#38bdf8',  // IT / digital / cyber
-              neonPurple: '#a855f7', // gaming vibe
-              darkBg: '#090d16',
-              cardBg: 'rgba(15, 23, 42, 0.75)',
-            }
-          },
-          boxShadow: {
-            'glow-cyan': '0 0 25px -5px rgba(56, 189, 248, 0.4)',
-            'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.4)',
-            'glow-purple': '0 0 25px -5px rgba(168, 85, 247, 0.4)',
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #090d16;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #38bdf8;
-    }
-
-    /* Glassmorphism utility */
-    .glass-card {
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    
-    .glass-card:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-    }
-
-    /* Background animated gradient glow */
-    .hero-glow {
-      background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, rgba(16, 185, 129, 0.08) 35%, rgba(9, 13, 22, 0) 70%);
-    }
-
-    /* Animated pulse dot */
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.05); }
-    }
-    .pulse-glow {
-      animation: pulseGlow 4s infinite ease-in-out;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101311">
+  <meta name="description" content="Osobní web Matyáše — IT, fotbal a hry.">
+  <title>Matyáš | IT, fotbal a hry</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
-<body class="bg-[#090d16] text-slate-100 font-sans antialiased selection:bg-brand-neonBlue selection:text-black min-h-screen relative overflow-x-hidden">
-
-  <!-- Background decorative light spheres -->
-  <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-neonBlue/10 rounded-full blur-3xl pointer-events-none -z-10 pulse-glow"></div>
-  <div class="fixed bottom-10 right-10 w-96 h-96 bg-brand-neonGreen/10 rounded-full blur-3xl pointer-events-none -z-10 pulse-glow"></div>
-
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-[#090d16]/80 border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-  <a href="#" class="flex items-center gap-3 group">
-    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-neonBlue via-brand-neonGreen to-purple-500 p-[2px] transition duration-300 group-hover:shadow-glow-cyan">
-      <div class="w-full h-full bg-[#0b101b] rounded-[10px] flex items-center justify-center font-display font-bold text-xl text-white">
-        &lt;M/&gt;
-      </div>
-    </div>
-    <div class="flex flex-col">
-      <span class="font-display font-bold tracking-wider text-lg text-white group-hover:text-brand-neonBlue transition">MATYAS.DEV</span>
-      <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">IT • Fotbal • Hry</span>
-    </div>
-  </a>
-
-  <!-- Desktop Nav -->
-  <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-    <a href="#about" class="text-slate-300 hover:text-brand-neonBlue transition-colors duration-200">O mně</a>
-    <a href="#skills" class="text-slate-300 hover:text-brand-neonGreen transition-colors duration-200">Dovednosti</a>
-    <a href="#projects" class="text-slate-300 hover:text-brand-neonBlue transition-colors duration-200">Projekty</a>
-    <a href="#minigame" class="text-slate-300 hover:text-brand-neonPurple transition-colors duration-200 flex items-center gap-1.5">
-      <i data-lucide="gamepad-2" class="w-4 h-4 text-brand-neonPurple"></i> Minihra
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Matyáš — úvod">
+      <span class="brand-mark" aria-hidden="true">M<span>.</span></span>
+      <span class="brand-name">MATYÁŠ<small>OSOBNÍ WEB</small></span>
     </a>
-    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold hover:shadow-glow-emerald transition duration-300 transform hover:-translate-y-0.5">
-      Napiš mi
-    </a>
-  </nav>
-
-  <!-- Mobile Menu Button -->
-      <button id="mobile-toggle" aria-label="Otevřít menu" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
-        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-[#0b101b]/95 px-6 py-6 space-y-4">
-      <a href="#about" class="block text-slate-300 hover:text-brand-neonBlue text-base py-1">O mně</a>
-      <a href="#skills" class="block text-slate-300 hover:text-brand-neonGreen text-base py-1">Dovednosti</a>
-      <a href="#projects" class="block text-slate-300 hover:text-brand-neonBlue text-base py-1">Projekty</a>
-      <a href="#minigame" class="block text-slate-300 hover:text-brand-neonPurple text-base py-1">Herní výzva</a>
-      <a href="#contact" class="inline-block mt-2 w-full text-center px-4 py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold">Napiš mi</a>
-    </div>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Otevřít navigaci" aria-expanded="false">☰</button>
+    <nav class="navigation" id="navigation" aria-label="Hlavní navigace">
+      <a href="#home">Úvod</a>
+      <a href="#interests">Co mě baví</a>
+      <a href="#projects">Projekty</a>
+      <a href="#games">Hry</a>
+      <a class="nav-contact" href="#contact">Kontakt <span aria-hidden="true">↗</span></a>
+    </nav>
   </header>
 
-  <main class="pt-24">
-    <section class="min-h-[90vh] flex items-center justify-center relative px-4 sm:px-6 lg:px-8 hero-glow">
-      <div class="max-w-4xl mx-auto text-center py-16">
-        
-        <!-- Status Pill -->
-    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs sm:text-sm mb-8 backdrop-blur-sm">
-      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-      <span>Otevřen novým projektům & stážím</span>
-      <span class="text-slate-500">|</span>
-      <span class="text-emerald-400 font-medium">Student IT</span>
-    </div>
-
-    <!-- Main Title & dynamic typewriter -->
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight text-white mb-6">
-      Ahoj, jsem <span class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent">Matyáš</span>
-      <span class="block mt-2 text-2xl sm:text-4xl md:text-5xl text-slate-300">
-        Jsem <span id="typewriter" class="text-brand-neonBlue border-r-2 border-brand-neonBlue pr-1"></span>
-      </span>
-    </h1>
-
-    <!-- Short summary -->
-    <p class="max-w-2xl mx-auto text-slate-400 text-base sm:text-lg mb-10 leading-relaxed">
-      Propojuji analytické myšlení ze světa technologií, týmovou disciplínu z fotbalového hřiště a strategický odpočinek u her. Vítej na mém webu!
-    </p>
-
-    <!-- CTA Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="#projects" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-bold hover:shadow-glow-cyan transition duration-300 flex items-center gap-2">
-            <i data-lucide="code-2" class="w-5 h-5"></i> Prozkoumat tvorbu
-          </a>
-          <a href="#minigame" class="px-8 py-3.5 rounded-xl glass-card text-white hover:border-brand-neonPurple hover:text-purple-300 transition duration-300 flex items-center gap-2">
-            <i data-lucide="crosshair" class="w-5 h-5 text-brand-neonPurple"></i> Herní reflex test
-          </a>
-          <a href="#contact" class="px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 transition duration-300 flex items-center gap-2">
-            <i data-lucide="mail" class="w-5 h-5 text-cyan-400"></i> Kontakt
-          </a>
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Ahoj, vítej na mém webu</p>
+        <h1>Jsem Matyáš.<br><span>Rád tvořím a hraju.</span></h1>
+        <p class="hero-intro">Zajímá mě svět počítačů, fotbal a hry. Vyber si, co tě zajímá, a prozkoumej to se mnou.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#interests">Poznej mě <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="#games">Zkusit hry <span aria-hidden="true">↗</span></a>
         </div>
-
-        <!-- Micro stats grid -->
-        <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto mt-16 pt-8 border-t border-slate-800/80 text-center">
-          <div>
-            <div class="text-2xl sm:text-3xl font-display font-bold text-cyan-400">3+ roky</div>
-            <div class="text-xs text-slate-400 mt-1">Kódování & Sítě</div>
-          </div>
-          <div>
-            <div class="text-2xl sm:text-3xl font-display font-bold text-emerald-400">11 let</div>
-            <div class="text-xs text-slate-400 mt-1">Aktivní fotbal</div>
-          </div>
-          <div>
-        <div class="text-2xl sm:text-3xl font-display font-bold text-purple-400">Gaming</div>
-        <div class="text-xs text-slate-400 mt-1">Koníček & Taktika</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="about" class="py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-16">
-    <h2 class="text-xs uppercase tracking-widest text-brand-neonBlue font-semibold mb-2">Moje zájmy</h2>
-    <p class="text-3xl sm:text-4xl font-display font-bold text-white">Technologie, sport a zábava</p>
-  </div>
-
-  <div class="grid md:grid-cols-3 gap-8">
-    
-    <!-- Card 1: IT Student -->
-    <div class="glass-card rounded-2xl p-7 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-      <div class="absolute -right-8 -top-8 w-28 h-28 bg-cyan-500/10 rounded-full group-hover:bg-cyan-500/20 blur-xl transition"></div>
-      <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
-        <i data-lucide="terminal" class="w-7 h-7"></i>
-      </div>
-      <h3 class="text-xl font-display font-bold text-white mb-3">IT Student & Kodér</h3>
-      <p class="text-slate-400 text-sm leading-relaxed mb-4">
-        Baví mě zkoumat, jak věci fungují pod kapotou. Od webových aplikací a skriptování přes správu sítí až po stavbu vlastního hardwaru a serverů.
-      </p>
-      <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Vývoj responzivních webů</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Linux servery & hosting</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Hardwarová optimalizace PC</li>
-      </ul>
-    </div>
-
-    <!-- Card 2: Footballer -->
-    <div class="glass-card rounded-2xl p-7 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-      <div class="absolute -right-8 -top-8 w-28 h-28 bg-emerald-500/10 rounded-full group-hover:bg-emerald-500/20 blur-xl transition"></div>
-      <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
-        <i data-lucide="activity" class="w-7 h-7"></i>
-      </div>
-      <h3 class="text-xl font-display font-bold text-white mb-3">Fotbalista</h3>
-      <p class="text-slate-400 text-sm leading-relaxed mb-4">
-        Fotbal mě učí vytrvalosti, disciplíně a schopnosti táhnout za jeden provaz. Hřiště je skvělé místo na vyčištění hlavy i trénink komunikace a týmové práce.
-      </p>
-      <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Týmová chemie & spolupráce</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Fyzická kondice a soustředění</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Schopnost zvládat tlak</li>
-      </ul>
-    </div>
-
-    <!-- Card 3: Gaming enthusiast -->
-    <div class="glass-card rounded-2xl p-7 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-      <div class="absolute -right-8 -top-8 w-28 h-28 bg-purple-500/10 rounded-full group-hover:bg-purple-500/20 blur-xl transition"></div>
-      <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-6">
-        <i data-lucide="gamepad-2" class="w-7 h-7"></i>
-      </div>
-      <h3 class="text-xl font-display font-bold text-white mb-3">Hry & E-sport</h3>
-      <p class="text-slate-400 text-sm leading-relaxed mb-4">
-        Ve volném čase si rád zahraju strategické nebo týmové multiplayer hry s kamarády. Zajímá mě herní technika, konfigurace serverů a taktické uvažování.
-      </p>
-      <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Taktické & strategické myšlení</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Správa herních serverů a komunity</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Rychlé reakce a týmový voice chat</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-    <section id="about" class="py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-xs uppercase tracking-widest text-brand-neonBlue font-semibold mb-2">Moje identita</h2>
-        <p class="text-3xl sm:text-4xl font-display font-bold text-white">Tři světy, jedna vášeň</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Card 1: IT Student -->
-        <div class="glass-card rounded-2xl p-7 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute -right-8 -top-8 w-28 h-28 bg-cyan-500/10 rounded-full group-hover:bg-cyan-500/20 blur-xl transition"></div>
-          <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
-            <i data-lucide="terminal" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-display font-bold text-white mb-3">IT Student & Kodér</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Fascinuje mě, jak věci fungují pod kapotou. Od webových technologií (HTML, CSS, moderní JavaScript) přes konfiguraci sítí až po stavbu herních a komunitních serverů. Neustále hledám výzvy a čistý kód.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Vývoj responzivních webů</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Linux servery & hosting</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Hardwarová optimalizace PC</li>
-          </ul>
+        <div class="hero-tags" aria-label="Moje zájmy">
+          <span>⌘ Technologie</span><span>⚽ Fotbal</span><span>✳ Hraní</span>
         </div>
-
-        <!-- Card 2: Footballer -->
-        <div class="glass-card rounded-2xl p-7 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute -right-8 -top-8 w-28 h-28 bg-emerald-500/10 rounded-full group-hover:bg-emerald-500/20 blur-xl transition"></div>
-          <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
-            <i data-lucide="activity" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-display font-bold text-white mb-3">Aktivní fotbalista</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Fotbal mě naučil to nejdůležitější pro život i profesi: vytrvalost, disciplínu a tah na branku. Na hřišti jsem zvyklý komunikovat, spoléhat na spoluhráče a bojovat až do 90. minuty i za nepříznivého stavu.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Týmová chemie & leadership</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Schopnost pracovat pod tlakem</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Fair-play a zdravý životní styl</li>
-          </ul>
-        </div>
-
-        <!-- Card 3: Gamer -->
-        <div class="glass-card rounded-2xl p-7 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
-          <div class="absolute -right-8 -top-8 w-28 h-28 bg-purple-500/10 rounded-full group-hover:bg-purple-500/20 blur-xl transition"></div>
-          <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-6">
-            <i data-lucide="gamepad-2" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-xl font-display font-bold text-white mb-3">Vášnivý Gamer</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Hry pro mě nejsou jen zábava, ale trenažér bleskových reakcí a taktiky. Založil jsem herní servery pro desítky přátel, modifikoval herní skripty a v kompetitivních titulech sázím na promyšlenou strategii.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Strategické a analytické myšlení</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Správa herních komunit & Discord</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Rychlé rozhodování ve vteřině</li>
-          </ul>
-        </div>
-
+      </div>
+      <div class="hero-art" aria-label="Grafická ilustrace osobního loga">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-logo">M<span>.</span></div>
+        <span class="float-chip chip-code">&lt; kód &gt;</span>
+        <span class="float-chip chip-ball">⚽</span>
+        <span class="float-chip chip-game">✦</span>
+        <span class="art-caption">IT <b>×</b> SPORT <b>×</b> HRY</span>
       </div>
     </section>
 
-    <section id="skills" class="py-24 bg-slate-950/60 border-y border-slate-800/60">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center mb-16">
-          <h2 class="text-xs uppercase tracking-widest text-brand-neonGreen font-semibold mb-2">Co ovládám</h2>
-          <p class="text-3xl sm:text-4xl font-display font-bold text-white">Dovednosti & Výbava</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-start">
-          
-          <!-- Column 1: Tech & Coding -->
-          <div class="space-y-6">
-            <h3 class="text-xl font-display font-bold text-cyan-400 flex items-center gap-2">
-              <i data-lucide="cpu" class="w-5 h-5"></i> IT & Technologický arzenál
-            </h3>
-
-            <!-- Skill 1 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">HTML5 / Moderní CSS & Tailwind</span>
-                <span class="text-cyan-400 font-semibold">90%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full transition-all duration-1000" style="width: 90%"></div>
-              </div>
-            </div>
-
-            <!-- Skill 2 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">JavaScript & Základy React / Web API</span>
-                <span class="text-cyan-400 font-semibold">75%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full transition-all duration-1000" style="width: 75%"></div>
-              </div>
-            </div>
-
-            <!-- Skill 3 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">Linux, Bash, Sítě & PC Hardware</span>
-                <span class="text-cyan-400 font-semibold">82%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full transition-all duration-1000" style="width: 82%"></div>
-              </div>
-            </div>
-
-            <!-- Skill 4 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">Git & Verzování kódu</span>
-                <span class="text-cyan-400 font-semibold">70%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full transition-all duration-1000" style="width: 70%"></div>
-              </div>
-            </div>
-
-            <!-- Badges -->
-            <div class="pt-4 flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-700/60 text-xs text-slate-300">VS Code</span>
-              <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-700/60 text-xs text-slate-300">Node.js</span>
-              <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-700/60 text-xs text-slate-300">SQL Basics</span>
-              <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-700/60 text-xs text-slate-300">Docker</span>
-              <span class="px-3 py-1 rounded-md bg-slate-900 border border-slate-700/60 text-xs text-slate-300">Figma</span>
-            </div>
-          </div>
-
-          <!-- Column 2: Football & Gaming attributes -->
-          <div class="space-y-6">
-            <h3 class="text-xl font-display font-bold text-emerald-400 flex items-center gap-2">
-              <i data-lucide="trophy" class="w-5 h-5"></i> Sportovní & Herní staty
-            </h3>
-
-            <!-- Stat 1 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">Vytrvalost a fyzická kondice (90 min zápas)</span>
-                <span class="text-emerald-400 font-semibold">95%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2.5 rounded-full" style="width: 95%"></div>
-              </div>
-            </div>
-
-            <!-- Stat 2 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">Reakční doba & Postřeh (FPS / reflexy)</span>
-                <span class="text-purple-400 font-semibold">92%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-purple-500 to-indigo-400 h-2.5 rounded-full" style="width: 92%"></div>
-              </div>
-            </div>
-
-            <!-- Stat 3 -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-sm">
-                <span class="font-medium text-slate-200">Týmová komunikace a shotcalling</span>
-                <span class="text-emerald-400 font-semibold">88%</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2.5 rounded-full" style="width: 88%"></div>
-              </div>
-            </div>
-
-            <!-- Setup overview card -->
-            <div class="glass-card p-4 rounded-xl border border-slate-700/60 mt-4">
-              <h4 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                <i data-lucide="monitor" class="w-4 h-4 text-brand-neonBlue"></i> Můj Battle-Station & Hardware
-              </h4>
-              <p class="text-xs text-slate-400 leading-normal">
-                Ryzen 7 5800X3D, RTX 3070, 32GB RAM, 240Hz Gaming IPS monitor pro rychlé reflexy i multitasking při programování.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
+    <section class="interests section-wrap" id="interests">
+      <div class="section-heading">
+        <p class="eyebrow">Tři různé světy</p>
+        <h2>Co to vlastně je<span>?</span></h2>
+        <p>Zjisti, co znamená IT, jak funguje fotbalový tým a co se skrývá za světem her.</p>
       </div>
+      <div class="interest-grid" role="tablist" aria-label="Moje zájmy">
+        <button class="interest-card is-active" type="button" role="tab" id="tab-it" aria-selected="true" aria-controls="interest-detail" data-interest="it">
+          <span class="card-icon icon-tech" aria-hidden="true">&lt;/&gt;</span>
+          <span class="card-number">01 / OD NÁPADU K WEBU</span>
+          <strong>IT Student<br>&amp; Kodér</strong>
+          <span class="card-summary">Obor o počítačích, programech, sítích a datech.</span>
+          <span class="card-link">Zjistit víc <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="interest-card" type="button" role="tab" id="tab-football" aria-selected="false" aria-controls="interest-detail" data-interest="football">
+          <span class="card-icon icon-football" aria-hidden="true">⚽</span>
+          <span class="card-number">02 / HRA JAKO TÝM</span>
+          <strong>Fotbalista</strong>
+          <span class="card-summary">Taktika, spolupráce a 90 minut v pohybu.</span>
+          <span class="card-link">Zjistit víc <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="interest-card" type="button" role="tab" id="tab-games" aria-selected="false" aria-controls="interest-detail" data-interest="games">
+          <span class="card-icon icon-games" aria-hidden="true">✳</span>
+          <span class="card-number">03 / POSTŘEH &amp; STRATEGIE</span>
+          <strong>Hry &amp; E-sport</strong>
+          <span class="card-summary">Výzvy, ve kterých rozhoduje rychlé myšlení.</span>
+          <span class="card-link">Otevřít hry <span aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+      <article class="interest-detail" id="interest-detail" role="tabpanel" aria-labelledby="tab-it" aria-live="polite">
+        <div class="detail-symbol" id="detail-symbol" aria-hidden="true">&lt;/&gt;</div>
+        <div class="detail-copy">
+          <p class="eyebrow" id="detail-kicker">ZVĚDAVOST / TECHNOLOGIE</p>
+          <h3 id="detail-title">IT Student &amp; Kodér</h3>
+          <p id="detail-text">IT znamená informační technologie: obor, který spojuje počítače, programy, sítě a práci s daty. IT student se učí, jak tyhle věci fungují, jak řešit technické problémy a jak vytvářet vlastní projekty — třeba web nebo aplikaci. „Kodér“ je člověk, který píše instrukce, díky nimž počítač udělá, co potřebujeme.</p>
+          <div class="detail-tags" id="detail-tags"><span>Programování</span><span>Tvorba webů</span><span>Objevování</span></div>
+        </div>
+        <span class="detail-index" id="detail-index">01</span>
+      </article>
     </section>
 
-    <section id="projects" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <h2 class="text-xs uppercase tracking-widest text-brand-neonBlue font-semibold mb-2">Moje práce</h2>
-          <p class="text-3xl sm:text-4xl font-display font-bold text-white">Můj projekt</p>
-        </div>
-
+    <section class="projects section-wrap" id="projects">
+      <div class="section-heading heading-inline">
+        <div><p class="eyebrow">Co jsem vytvořil</p><h2>Moje projekty<span>.</span></h2></div>
+        <p>Malé projekty, na kterých se učím nové věci.</p>
       </div>
-
-      <!-- Projects Grid -->
-      <div class="grid gap-6 max-w-2xl mx-auto w-full" id="projects-grid">
-        <a href="googlesearch/index.html" class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group transition duration-300 hover:-translate-y-1 hover:shadow-glow-cyan" aria-label="Otevřít projekt Google Search">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-2.5 py-1 rounded text-[11px] font-bold tracking-wide uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">IT & Web</span>
-              <i data-lucide="search" class="w-5 h-5 text-brand-neonBlue"></i>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white group-hover:text-brand-neonBlue transition mb-2">Google Search</h3>
-            <p class="text-slate-400 text-sm mb-6">
-              Vlastní webová ukázka vyhledávače Google s běžným vyhledáváním, hledáním obrázků a pokročilým vyhledáváním.
-            </p>
-          </div>
-          <div>
-            <div class="flex flex-wrap gap-1.5 mb-5 text-xs text-slate-400">
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">HTML</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">CSS</span>
-              <span class="bg-slate-800/80 px-2 py-0.5 rounded">Forms</span>
-            </div>
-            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 group-hover:text-cyan-300">
-              Otevřít projekt <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </span>
-          </div>
-        </a>
-      </div>
+      <a class="project-card" href="googlesearch/index.html">
+        <span class="project-icon" aria-hidden="true">⌕</span>
+        <span class="project-info"><span class="project-type">WEBOVÝ PROJEKT</span><strong>Google Search</strong><span>Moje ukázka vyhledávače s hledáním, obrázky a pokročilým vyhledáváním.</span></span>
+        <span class="project-arrow" aria-label="Otevřít projekt">↗</span>
+      </a>
     </section>
 
-    <section id="minigame" class="py-24 bg-slate-950/80 border-t border-slate-800/60 relative overflow-hidden">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold mb-4">
-          <i data-lucide="zap" class="w-3.5 h-3.5 text-brand-neonPurple"></i>
-          Mini-výzva pro návštěvníky
+    <section class="games-section" id="games">
+      <div class="section-wrap games-content">
+        <div class="section-heading">
+          <p class="eyebrow">Pauza na hraní</p>
+          <h2>Vyber si hru<span>.</span></h2>
+          <p>Dvě malé hry přímo na stránce. Vyber si obtížnost, nebo se postav na start proti počítačovým soupeřům.</p>
         </div>
-        
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-3">Máš rychlejší reflexy než já?</h2>
-        <p class="text-slate-400 text-sm max-w-xl mx-auto mb-8">
-          Vyzkoušej si bleskový reflexní test. Klikni na <span class="text-emerald-400 font-semibold">Fotbalový míč</span> nebo <span class="text-brand-neonPurple font-semibold">Herní target</span> dřív, než zmizí! Limit: 15 sekund.
-        </p>
-
-        <!-- Mini game box -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto border border-purple-500/20 relative shadow-glow-purple">
-          
-          <!-- Game dashboard -->
-          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
-            <div>
-              <span class="text-xs uppercase text-slate-400 block">Čas</span>
-              <span id="game-time" class="text-2xl font-display font-bold text-cyan-400">15s</span>
-            </div>
-            <div>
-              <span class="text-xs uppercase text-slate-400 block">Skóre</span>
-              <span id="game-score" class="text-3xl font-display font-bold text-brand-neonGreen">0</span>
-            </div>
-            <div>
-              <span class="text-xs uppercase text-slate-400 block">Nejlepší výsledek</span>
-              <span id="game-highscore" class="text-2xl font-display font-bold text-purple-400">0</span>
-            </div>
-          </div>
-
-          <!-- Play arena -->
-          <div id="game-arena" class="relative w-full h-64 sm:h-80 bg-slate-900/90 rounded-xl overflow-hidden border border-slate-800 flex items-center justify-center cursor-crosshair">
-            
-            <!-- Start overlay screen -->
-            <div id="game-start-screen" class="text-center z-10 p-4">
-              <div class="text-4xl mb-3">⚽ 🎮</div>
-              <p class="text-slate-300 font-medium text-sm mb-4">Připraven otestovat rychlost prstů?</p>
-              <button id="btn-start-game" class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold hover:opacity-90 transition">
-                Start hry
-              </button>
-            </div>
-
-            <!-- Target element spawned dynamically -->
-            <button id="game-target" class="hidden absolute w-14 h-14 rounded-full flex items-center justify-center text-2xl transition-all duration-75 select-none active:scale-90" aria-label="Target">
-              ⚽
-            </button>
-          </div>
-
-          <p class="text-xs text-slate-500 mt-4">
-            Tip: Skóre nad 15 bodů znamená reakce hodné elitního esportu a rychlého křídla!
-          </p>
-
+        <div class="game-picker" role="tablist" aria-label="Výběr hry">
+          <button class="game-choice is-active" type="button" role="tab" aria-selected="true" aria-controls="game-panel" data-game="pong"><span aria-hidden="true">🏓</span><span><strong>Ping-pong</strong><small>Ovládání W / S</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
+          <button class="game-choice" type="button" role="tab" aria-selected="false" aria-controls="game-panel" data-game="race"><span aria-hidden="true">🏎️</span><span><strong>Závodní auta</strong><small>Ovládání WASD</small></span><span class="choice-arrow" aria-hidden="true">↗</span></button>
         </div>
-
-      </div>
-    </section>
-
-    <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        
-        <div>
-          <h2 class="text-xs uppercase tracking-widest text-brand-neonBlue font-semibold mb-2">Spojme se</h2>
-          <p class="text-3xl sm:text-4xl font-display font-bold text-white mb-6">Máš nápad na projekt nebo hledáš parťáka?</p>
-          <p class="text-slate-400 leading-relaxed mb-8">
-            Ať už tě zajímá tvorba moderního webu, diskuze o serverech, přátelský fotbalový zápas nebo hledáš spoluhráče do týmu, zanech mi zprávu. Rád odepíšu!
-          </p>
-
-          <div class="space-y-4 mb-8">
-          <div class="flex items-center gap-4 text-slate-300">
-            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
-              <i data-lucide="mail" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-xs text-slate-500 block">E-mail</span>
-              <span class="text-sm font-medium">matyas@student-it.cz</span>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 text-slate-300">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
-              <i data-lucide="map-pin" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-xs text-slate-500 block">Lokalita</span>
-              <span class="text-sm font-medium">Česká republika</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social buttons -->
-        <div class="flex flex-wrap gap-3">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-white hover:border-slate-500 transition flex items-center gap-2 text-sm">
-            <i data-lucide="github" class="w-4 h-4"></i> GitHub
-          </a>
-          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-[#5865F2] hover:border-[#5865F2]/50 transition flex items-center gap-2 text-sm">
-            <i data-lucide="message-square" class="w-4 h-4"></i> Discord: @matyas_dev
-          </a>
-          <a href="https://steamcommunity.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex items-center gap-2 text-sm">
-            <i data-lucide="gamepad" class="w-4 h-4"></i> Steam Profil
-          </a>
-        </div>
-      </div>
-
-      <!-- Contact Form Box -->
-      <div class="glass-card rounded-2xl p-8 border border-slate-800 shadow-xl">
-        <form id="contact-form" class="space-y-4">
-          
-          <div>
-            <label for="name" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">Tvé jméno / Nick</label>
-            <input type="text" id="name" required placeholder="Např. Martin Novák" 
-              class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm">
-          </div>
-
-          <div>
-            <label for="email" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">E-mail</label>
-            <input type="email" id="email" required placeholder="např. martin@email.cz" 
-              class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm">
-          </div>
-
-          <div>
-            <label for="interest" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">Téma zprávy</label>
-            <select id="interest" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm">
-              <option value="it">IT projekt / Webová tvorba</option>
-              <option value="gaming">Hry & Společné hraní / Server</option>
-              <option value="football">Fotbal & Sportovní sparing</option>
-              <option value="other">Jiné / Jen tak pokecat</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="message" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">Zpráva</label>
-            <textarea id="message" rows="4" required placeholder="Ahoj Matyáši, zaujal mě tvůj web..." 
-              class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm"></textarea>
-          </div>
-              <div>
-                <span class="text-xs text-slate-500 block">E-mail</span>
-                <span class="text-sm font-medium">patrik@student-it.cz</span>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4 text-slate-300">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
-                <i data-lucide="map-pin" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <span class="text-xs text-slate-500 block">Lokalita</span>
-                <span class="text-sm font-medium">Česká republika</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Social buttons -->
-          <div class="flex flex-wrap gap-3">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-white hover:border-slate-500 transition flex items-center gap-2 text-sm">
-              <i data-lucide="github" class="w-4 h-4"></i> GitHub
-            </a>
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-[#5865F2] hover:border-[#5865F2]/50 transition flex items-center gap-2 text-sm">
-              <i data-lucide="message-square" class="w-4 h-4"></i> Discord: @patrik_gamer
-            </a>
-            <a href="https://steamcommunity.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/60 text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex items-center gap-2 text-sm">
-              <i data-lucide="gamepad" class="w-4 h-4"></i> Steam Profil
-            </a>
-          </div>
-        </div>
-
-        <!-- Contact Form Box -->
-        <div class="glass-card rounded-2xl p-8 border border-slate-800 shadow-xl">
-          <form id="contact-form" class="space-y-4">
-            
-            <div>
-              <label for="name" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">Tvé jméno / Nick</label>
-              <input type="text" id="name" required placeholder="Např. Martin Novák nebo Player1" 
-                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm">
-            </div>
-
-            <div>
-              <label for="email" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">E-mail</label>
-              <input type="email" id="email" required placeholder="např. martin@email.cz" 
-                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm">
-            </div>
-
-            <div>
-              <label for="interest" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">Téma zprávy</label>
-              <select id="interest" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm">
-                <option value="it">IT projekt / Webová tvorba</option>
-                <option value="gaming">Gaming & Společné hraní / Server</option>
-                <option value="football">Fotbal & Sportovní sparing</option>
-                <option value="other">Jiné / Jen tak pokecat</option>
+        <div class="game-panel" id="game-panel" role="tabpanel">
+          <div class="game-topline">
+            <div><p class="eyebrow" id="game-label">MINIHRA / PING-PONG</p><h3 id="game-title">Poraz počítač!</h3></div>
+            <label class="difficulty-control" id="ai-difficulty-control" for="ai-difficulty">
+              <span>Obtížnost AI</span>
+              <select id="ai-difficulty">
+                <option value="easy">Lehká</option>
+                <option value="normal" selected>Střední</option>
+                <option value="hard">Těžká</option>
               </select>
+            </label>
+            <div class="game-score" id="game-score" aria-live="polite">0 <span>:</span> 0</div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="game-canvas" width="800" height="420" aria-label="Herní plocha; ping-pong se ovládá klávesami W a S"></canvas>
+            <div class="race-hud" id="race-hud" aria-live="polite" hidden>
+              <div class="hud-stat"><span>POZICE</span><strong id="race-position">1. / 4</strong></div>
+              <div class="hud-stat"><span>ČAS</span><strong id="race-time">00:00.0</strong></div>
+              <div class="hud-stat"><span>KOLO</span><strong id="race-lap">1 / 3</strong></div>
+              <div class="hud-stat"><span>RYCHLOST</span><strong id="race-speed">0 km/h</strong></div>
             </div>
-
-            <div>
-              <label for="message" class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase">Zpráva</label>
-              <textarea id="message" rows="4" required placeholder="Ahoj Patriku, zaujal mě tvůj web..." 
-                class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-neonBlue focus:ring-1 focus:ring-brand-neonBlue transition text-sm"></textarea>
-            </div>
-
-            <button type="submit" id="btn-submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 text-slate-950 font-bold hover:shadow-glow-cyan transition duration-300 flex items-center justify-center gap-2">
-              <i data-lucide="send" class="w-4 h-4"></i> Odeslat zprávu
-            </button>
-
-            <!-- Custom In-page Message Box (Never Alert) -->
-            <div id="form-feedback" class="hidden p-3 rounded-xl text-center text-xs font-medium"></div>
-
-          </form>
+            <div class="canvas-message" id="canvas-message">Klikni na „Začít hru“ a připrav se.</div>
+          </div>
+          <div class="game-bottomline">
+            <p id="game-instructions">Pohyb pálky: <kbd>W</kbd> nahoru a <kbd>S</kbd> dolů. První k 5 bodům vyhrává.</p>
+            <button class="button button-primary game-start" id="game-start" type="button">Začít hru <span aria-hidden="true">→</span></button>
+          </div>
         </div>
-
       </div>
+    </section>
+
+    <section class="contact section-wrap" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Máš otázku nebo nápad?</p>
+        <h2>Napiš mi<span>.</span></h2>
+        <p>Budu rád, když se ozveš — třeba kvůli webu, fotbalu nebo společné hře.</p>
+      </div>
+      <a class="email-link" href="mailto:mateskloboucek@gmail.com"><span class="email-icon" aria-hidden="true">✉</span><span><small>MŮJ E-MAIL</small><strong>mateskloboucek@gmail.com</strong></span><span class="email-arrow" aria-hidden="true">↗</span></a>
     </section>
   </main>
 
-  <footer class="border-t border-slate-800/80 bg-slate-950/80 py-8 text-center text-slate-500 text-xs">
-  <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p>© 2024 Matyáš • IT Student, Fotbalista & Hráč. Vytvořeno s důrazem na výkon a styl.</p>
-    <div class="flex items-center gap-4 text-slate-400">
-      <a href="#about" class="hover:text-cyan-400 transition">O mně</a>
-      <span>•</span>
-      <a href="#projects" class="hover:text-cyan-400 transition">Projekty</a>
-      <span>•</span>
-      <a href="#minigame" class="hover:text-purple-400 transition">Minihra</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Initialize Lucide Icons
-  lucide.createIcons();
-
-  // 1. Mobile Menu Toggle
-  const mobileBtn = document.getElementById('mobile-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Close mobile menu when clicking link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-  });
-
-  // 2. Typewriter Effect
-  const words = ["Student IT", "Fotbalista", "Hráč videoher", "Tvůrce Webů"];
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const typewriterEl = document.getElementById('typewriter');
-
-  function typeEffect() {
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-      typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
-    }
-
-    let speed = isDeleting ? 45 : 95;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-      speed = 1800; // Pause at end of word
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      speed = 400; // Pause before next word
-    }
-
-    setTimeout(typeEffect, speed);
-  }
-  typeEffect();
-
-  // 3. Interactive Reflex Mini-Game
-    const arena = document.getElementById('game-arena');
-    const startScreen = document.getElementById('game-start-screen');
-    const btnStart = document.getElementById('btn-start-game');
-    const target = document.getElementById('game-target');
-    const scoreDisplay = document.getElementById('game-score');
-    const timeDisplay = document.getElementById('game-time');
-    const highscoreDisplay = document.getElementById('game-highscore');
-
-    let score = 0;
-    let highScore = 0;
-    let timeLeft = 15;
-    let gameInterval = null;
-    let timerInterval = null;
-    const targetEmojis = ['⚽', '🎮', '⚡', '🎯', '🔥'];
-
-    function spawnTarget() {
-      const arenaRect = arena.getBoundingClientRect();
-      const targetSize = 56; // 14 Tailwind rem approx 56px
-
-      const maxX = arenaRect.width - targetSize - 16;
-      const maxY = arenaRect.height - targetSize - 16;
-
-      const randomX = Math.max(10, Math.floor(Math.random() * maxX));
-      const randomY = Math.max(10, Math.floor(Math.random() * maxY));
-      const randomEmoji = targetEmojis[Math.floor(Math.random() * targetEmojis.length)];
-
-      target.textContent = randomEmoji;
-      target.style.left = `${randomX}px`;
-      target.style.top = `${randomY}px`;
-      target.style.background = randomEmoji === '⚽' ? 'rgba(16, 185, 129, 0.25)' : 'rgba(168, 85, 247, 0.25)';
-      target.style.borderColor = randomEmoji === '⚽' ? '#10b981' : '#a855f7';
-      target.style.borderWidth = '2px';
-      target.classList.remove('hidden');
-    }
-
-    function startGame() {
-      score = 0;
-      timeLeft = 15;
-      scoreDisplay.textContent = score;
-      timeDisplay.textContent = `${timeLeft}s`;
-
-      startScreen.classList.add('hidden');
-      spawnTarget();
-
-      // Countdown
-      timerInterval = setInterval(() => {
-        timeLeft--;
-        timeDisplay.textContent = `${timeLeft}s`;
-        if (timeLeft <= 0) {
-          endGame();
-        }
-      }, 1000);
-    }
-
-    function endGame() {
-      clearInterval(timerInterval);
-      target.classList.add('hidden');
-      startScreen.classList.remove('hidden');
-
-      if (score > highScore) {
-        highScore = score;
-        highscoreDisplay.textContent = highScore;
-      }
-
-      startScreen.innerHTML = `
-      <div class="text-3xl mb-1">🏁 Konec času!</div>
-      <p class="text-sm text-slate-300 mb-1">Tvé skóre: <strong class="text-emerald-400 text-lg">${score}</strong></p>
-      <p class="text-xs text-slate-400 mb-4">${score >= 12 ? 'Parádní reflexy a postřeh!' : 'Dobrý pokus! Zkus to znovu a zrychli reakci.'}</p>
-      <button id="btn-restart" class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold hover:opacity-90 transition">
-        Hrát znovu
-      </button>
-    `;
-
-    document.getElementById('btn-restart').addEventListener('click', startGame);
-  }
-
-  target.addEventListener('click', () => {
-    score++;
-    scoreDisplay.textContent = score;
-    spawnTarget();
-  });
-
-  btnStart.addEventListener('click', startGame);
-
-  // 5. Contact Form Feedback (Strictly No alert())
-  const contactForm = document.getElementById('contact-form');
-  const feedbackBox = document.getElementById('form-feedback');
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    feedbackBox.classList.remove('hidden', 'bg-red-500/20', 'text-red-300', 'border-red-500/30');
-    feedbackBox.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border', 'border-emerald-500/30');
-    feedbackBox.innerHTML = `Díky, <strong>${name}</strong>! Zpráva byla simulovaně odeslána. Brzy se ozvu zpět!`;
-
-    contactForm.reset();
-
-    setTimeout(() => {
-      feedbackBox.classList.add('hidden');
-    }, 5000);
-  });
-</script>
+  <footer class="site-footer section-wrap">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">M<span>.</span></span><span class="brand-name">MATYÁŠ<small>IT · FOTBAL · HRY</small></span></a>
+    <p>Vytvořeno s radostí a trochou kódu.</p>
+    <a href="mailto:mateskloboucek@gmail.com">Napiš mi <span aria-hidden="true">↗</span></a>
+  </footer>
 </body>
 </html>
